@@ -1,0 +1,6 @@
+{
+  "name": "DSA Revision OS",
+  "description": "Spaced repetition operating system for data structures and algorithms mastery. Active recall queues, canonical pattern codex, and forgetting curve analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
