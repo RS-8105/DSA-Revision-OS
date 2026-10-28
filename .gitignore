@@ -1,0 +1,63 @@
+# ===================================================================
+# DSA Revision OS - Root .gitignore
+# ===================================================================
+
+# Node & Frontend Dependencies
+node_modules/
+frontend/node_modules/
+.pnp
+.pnp.js
+
+# Frontend Builds & Artifacts
+dist/
+frontend/dist/
+build/
+.vite/
+frontend/.vite/
+
+# Backend Build & Target
+target/
+backend/target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+backend/.env
+frontend/.env
+!*.env.example
+*.secret
+*.pem
+*.key
+
+# Logs & Diagnostics
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# IDE & Editor Configurations
+.idea/
+*.iml
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Temporary & Internal Specification Files
+tmp/
+temp/
+DSA_Revision_Tracker_PRD.md
+*PRD*.md
