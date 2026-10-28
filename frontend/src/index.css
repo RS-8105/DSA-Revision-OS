@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 }
 
@@ -44,3 +45,128 @@
   background: #77c73d;
 }
 
+/* ===================================================================
+   Dark Theme (Botanical Obsidian)
+   =================================================================== */
+html.dark,
+body.dark,
+.dark {
+  color-scheme: dark;
+}
+
+.dark body,
+html.dark body,
+.dark.min-h-screen,
+.dark .min-h-screen,
+.dark main {
+  background-color: #0d140a !important;
+  color: #e5ede0 !important;
+}
+
+.dark aside,
+.dark header,
+.dark .bg-white,
+.dark .bg-\[\#fbfdfa\],
+.dark .bg-\[\#f9fdf7\],
+.dark .bg-\[\#fff8f7\],
+.dark .bg-\[\#fef2f2\],
+.dark .bg-white\/80,
+.dark .bg-white\/90,
+.dark .bg-white\/95,
+.dark .bg-white\/50,
+.dark [class*="from-white"] {
+  background-color: #141f10 !important;
+  background-image: none !important;
+  color: #e5ede0 !important;
+}
+
+.dark .bg-white\/95 {
+  background-color: rgba(20, 31, 16, 0.95) !important;
+}
+
+.dark .bg-\[\#f5fbf1\],
+.dark .bg-\[\#eef7e8\],
+.dark .bg-\[\#f0f8ec\],
+.dark .bg-\[\#ebf5e5\],
+.dark .bg-\[\#f5fbf1\]\/70,
+.dark .bg-\[\#eef7e8\]\/60,
+.dark .bg-\[\#eef7e8\]\/50 {
+  background-color: #192714 !important;
+}
+
+.dark .border-\[\#c9d8be\],
+.dark .border-\[\#c9d8be\]\/70,
+.dark .border-\[\#c9d8be\]\/60,
+.dark .border-\[\#c9d8be\]\/50,
+.dark .border-\[\#c9d8be\]\/40 {
+  border-color: #273b1f !important;
+}
+
+.dark .text-\[\#111f09\] {
+  color: #edf5e6 !important;
+}
+
+.dark .text-\[\#414a38\],
+.dark .text-\[\#526b3e\],
+.dark .text-\[\#2d451b\],
+.dark .text-\[\#6f7d66\],
+.dark .text-\[\#3f562e\] {
+  color: #9eb294 !important;
+}
+
+.dark .text-\[\#326b00\],
+.dark .text-\[\#255400\] {
+  color: #8ee055 !important;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #182414 !important;
+  color: #edf5e6 !important;
+  border-color: #2b3d22 !important;
+}
+
+/* Fix input focus turning white with white font */
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus,
+.dark .focus\:bg-white:focus,
+.dark input.focus\:bg-white:focus {
+  background-color: #182414 !important;
+  color: #edf5e6 !important;
+}
+
+/* Fix native browser select dropdown options rendering white background */
+.dark select option {
+  background-color: #141f10 !important;
+  color: #edf5e6 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #6a7d62 !important;
+}
+
+.dark .hover\:bg-\[\#f5fbf1\]:hover,
+.dark .hover\:bg-\[\#eef7e8\]:hover {
+  background-color: #21331a !important;
+}
+
+.dark .fill-white {
+  fill: #192714 !important;
+}
+
+.dark .shadow-xs,
+.dark .shadow-sm,
+.dark .shadow-md,
+.dark .shadow-xl {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #2b3d22;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64b02d;
+}

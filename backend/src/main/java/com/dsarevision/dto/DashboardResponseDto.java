@@ -10,6 +10,7 @@ public class DashboardResponseDto {
     private int overallMastery;
     private int revisionStreakDays;
     private long totalRevisionsCompleted;
+    private long weeklyCompletedCount;
 
     private List<UserPatternResponseDto> todayRevisions;
     private List<UserPatternResponseDto> overdueRevisions;
@@ -67,6 +68,14 @@ public class DashboardResponseDto {
 
     public void setTotalRevisionsCompleted(long totalRevisionsCompleted) {
         this.totalRevisionsCompleted = totalRevisionsCompleted;
+    }
+
+    public long getWeeklyCompletedCount() {
+        return weeklyCompletedCount;
+    }
+
+    public void setWeeklyCompletedCount(long weeklyCompletedCount) {
+        this.weeklyCompletedCount = weeklyCompletedCount;
     }
 
     public List<UserPatternResponseDto> getTodayRevisions() {

@@ -21,5 +21,7 @@ public interface RevisionHistoryRepository extends JpaRepository<RevisionHistory
 
     long countByUserId(Long userId);
 
+    long countByUserIdAndRevisionDateAfter(Long userId, java.time.LocalDateTime after);
+
     long countByUserIdAndPatternId(Long userId, Long patternId);
 }

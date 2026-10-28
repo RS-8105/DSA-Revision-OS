@@ -44,6 +44,7 @@ public class DashboardService {
         ProgressSummaryDto progressSummary = userProgressService.getProgressSummary(userId);
 
         long totalCompleted = revisionHistoryRepository.countByUserId(userId);
+        long weeklyCompleted = revisionHistoryRepository.countByUserIdAndRevisionDateAfter(userId, java.time.LocalDateTime.now().minusDays(7));
         int streakDays = calculateStreak(userId);
 
         DashboardResponseDto dto = new DashboardResponseDto();
@@ -53,6 +54,7 @@ public class DashboardService {
         dto.setOverallMastery(progressSummary.getOverallMastery());
         dto.setRevisionStreakDays(streakDays);
         dto.setTotalRevisionsCompleted(totalCompleted);
+        dto.setWeeklyCompletedCount(weeklyCompleted);
 
         dto.setTodayRevisions(todayRevisions);
         dto.setOverdueRevisions(overdueRevisions);

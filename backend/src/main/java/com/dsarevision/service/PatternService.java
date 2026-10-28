@@ -63,6 +63,36 @@ public class PatternService {
                 .toList();
     }
 
+    @Transactional
+    public PatternResponseDto createPattern(com.dsarevision.dto.CreatePatternDto dto) {
+        if (patternRepository.existsByNameIgnoreCase(dto.getName().trim())) {
+            throw new com.dsarevision.exception.ApiException("A pattern with this name already exists", org.springframework.http.HttpStatus.CONFLICT);
+        }
+        Pattern pattern = new Pattern(
+                dto.getName().trim(),
+                dto.getCategory().trim(),
+                dto.getDifficulty().trim(),
+                dto.getDescription() != null ? dto.getDescription().trim() : ""
+        );
+        pattern = patternRepository.save(pattern);
+        return toSummaryDto(pattern);
+    }
+
+    @Transactional
+    public ProblemResponseDto addProblem(Long patternId, com.dsarevision.dto.CreateProblemDto dto) {
+        Pattern pattern = patternRepository.findById(patternId)
+                .orElseThrow(() -> new ResourceNotFoundException("Pattern", "id", patternId));
+
+        Problem problem = new Problem(
+                pattern,
+                dto.getTitle().trim(),
+                dto.getDifficulty().trim(),
+                dto.getLink() != null ? dto.getLink().trim() : ""
+        );
+        problem = problemRepository.save(problem);
+        return toProblemDto(problem);
+    }
+
     public PatternResponseDto toSummaryDto(Pattern pattern) {
         int problemCount = pattern.getProblems() != null ? pattern.getProblems().size() : 0;
         return new PatternResponseDto(

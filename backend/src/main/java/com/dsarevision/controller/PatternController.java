@@ -45,4 +45,19 @@ public class PatternController {
             @org.springframework.security.core.annotation.AuthenticationPrincipal com.dsarevision.config.UserPrincipal principal) {
         return ResponseEntity.ok(userProgressService.getUserProgressForPattern(principal.getId(), id));
     }
+
+    @PostMapping
+    public ResponseEntity<PatternResponseDto> createPattern(
+            @jakarta.validation.Valid @RequestBody com.dsarevision.dto.CreatePatternDto request) {
+        PatternResponseDto response = patternService.createPattern(request);
+        return new ResponseEntity<>(response, org.springframework.http.HttpStatus.CREATED);
+    }
+
+    @PostMapping("/{id}/problems")
+    public ResponseEntity<ProblemResponseDto> addProblem(
+            @PathVariable Long id,
+            @jakarta.validation.Valid @RequestBody com.dsarevision.dto.CreateProblemDto request) {
+        ProblemResponseDto response = patternService.addProblem(id, request);
+        return new ResponseEntity<>(response, org.springframework.http.HttpStatus.CREATED);
+    }
 }
