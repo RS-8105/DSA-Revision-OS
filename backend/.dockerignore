@@ -1,0 +1,30 @@
+# Maven build artifacts
+target/
+*.jar
+*.war
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Git metadata
+.git/
+.gitignore
+
+# IDE & Editor caches
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
