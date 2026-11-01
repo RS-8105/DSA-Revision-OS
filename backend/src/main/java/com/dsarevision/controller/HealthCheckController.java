@@ -18,6 +18,7 @@ public class HealthCheckController {
                 "status", "UP",
                 "service", "DSA Revision Tracker API",
                 "version", "0.0.1-SNAPSHOT",
+                "build", "cors-v2",
                 "timestamp", Instant.now().toString()
         ));
     }
