@@ -70,6 +70,8 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(authenticationEntryPoint()))
                 .authorizeHttpRequests(auth -> auth
+                        // Permit all CORS preflight OPTIONS requests unconditionally
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         // Public authentication & health check
                         .requestMatchers("/api/auth/**", "/api/health").permitAll()
                         // Public pattern catalog reading (PRD core catalog browseable)
